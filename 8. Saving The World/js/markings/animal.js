@@ -1,22 +1,27 @@
 class Animal extends Marking {
     constructor(center, directionVector, width, height) {
         super(center, directionVector, width, height);
-
+        this.animalCount = 5;
         this.borders = [this.poly.segments[0], this.poly.segments[2]];
         this.type = "animal"; 
     }
 
     draw(ctx) {
-        // Define the font size based on the width of the marking
-        const fontSize = this.width / 2; // Adjust the divisor to scale the emoji size
-        ctx.font = `${fontSize}px serif`; // Set the font size and family
-        ctx.textAlign = 'center'; // Align text horizontally center
-        ctx.textBaseline = 'middle'; // Align text vertically center
+        const spacing = this.height / this.animalCount;
+        const maxOffset = this.width / 6;
 
-        // Draw the cat emoji
-        ctx.fillText("🐈‍⬛", this.center.x, this.center.y);
+        ctx.font = `20px serif`;
 
-     
+        for (let i = 1; i <= this.animalCount; i++) {
+            const offsetDirection = i % 2 === 0 ? 1 : -1;
+            const offsetX = maxOffset * offsetDirection;
+            const baseX = this.center.x + offsetX;
+            const baseY = this.center.y - this.height / 2 + i * spacing;
 
+            
+            ctx.textAlign = 'center'; 
+            ctx.textBaseline = 'middle'; 
+            ctx.fillText("🐕", baseX, baseY);
+        }
     }
 }
