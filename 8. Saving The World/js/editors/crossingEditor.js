@@ -1,6 +1,9 @@
 class CrossingEditor extends MarkingEditor {
-   constructor(viewport, world) {
+   constructor(viewport, world, peopleCount=3) {
+
       super(viewport, world, world.graph.segments);
+      this.peopleCount = peopleCount;
+
    }
 
    createMarking(center, directionVector) {
@@ -8,7 +11,8 @@ class CrossingEditor extends MarkingEditor {
          center,
          directionVector,
          world.roadWidth,
-         world.roadWidth / 2
+         world.roadWidth / 2, 
+         this.peopleCount
       );
    }
 }

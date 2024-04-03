@@ -24,7 +24,7 @@
          <button id="stopBtn" onclick="setMode('stop')">🛑</button>
          <button id="fourwaystopBtn" onclick="setMode('fourwaystop')">4🛑</button>
          <button id="yieldBtn" onclick="setMode('yield')">⚠️</button>
-         <button id="crossingBtn" onclick="setMode('crossing')">🚶</button>
+         <button id="crossingBtn" onclick="promptForPeople('crossing')">🚶</button>
          <button id="parkingBtn" onclick="setMode('parking')">🅿️</button>
          <button id="lightBtn" onclick="setMode('light')">🚦</button>
          <button id="startBtn" onclick="setMode('start')">🚙</button>
@@ -175,6 +175,23 @@
                tool.editor.disable();
             }
          }
+
+         function promptForPeople(mode) {
+            const peopleCount = prompt("How many people should be in the crossing?", "5");
+            const parsedCount = parseInt(peopleCount, 10);
+
+            if (!isNaN(parsedCount) && parsedCount > 0) {
+               dissableEditors();
+               tools[mode].editor = new CrossingEditor(viewport, world, peopleCount);
+               setMode(mode);
+
+            } else {
+               alert("Please enter a valid number.");
+            }
+         }
+
+
+
       </script>
    </body>
 </html>
