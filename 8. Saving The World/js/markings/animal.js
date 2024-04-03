@@ -23,5 +23,6 @@ class Animal extends Marking {
             ctx.textBaseline = 'middle'; 
             ctx.fillText("🐕", baseX, baseY);
         }
+
     }
 }

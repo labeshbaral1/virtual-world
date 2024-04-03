@@ -1,7 +1,7 @@
 class Crossing extends Marking {
 
 
-   
+
    constructor(center, directionVector, width, height, peopleCount) {
        super(center, directionVector, width, height);
        this.peopleCount = peopleCount;
@@ -65,5 +65,7 @@ class Crossing extends Marking {
            ctx.lineTo(baseX + headRadius, baseY + 4 * headRadius);
            ctx.stroke();
        }
+
+
    }
 }

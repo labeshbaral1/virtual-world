@@ -15,11 +15,14 @@ class Marking  {
    }
 
    static load(info) {
+
+      console.log(info);
       const point = new Point(info.center.x, info.center.y);
       const dir = new Point(info.directionVector.x, info.directionVector.y);
+
       switch (info.type) {
          case "crossing":
-            return new Crossing(point, dir, info.width, info.height);
+            return new Crossing(point, dir, info.width, info.height, 2);
          case "light":
             return new Light(point, dir, info.width, info.height);
          case "marking":
@@ -30,6 +33,10 @@ class Marking  {
             return new Start(point, dir, info.width, info.height);
          case "stop":
             return new Stop(point, dir, info.width, info.height);
+         case "animal":
+            return new Animal(point, dir, info.width, info.height);
+         case "fourwaystop":
+            return new FourWayStop(point, dir, info.width, info.height);
          case "target":
             return new Target(point, dir, info.width, info.height);
          case "yield":
@@ -38,6 +45,7 @@ class Marking  {
    }
 
    draw(ctx) {
+      // console.log(ctx);
       this.poly.draw(ctx);
    }
 }

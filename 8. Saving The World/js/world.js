@@ -269,6 +269,7 @@ class World {
       for (const env of this.envelopes) {
          env.draw(ctx, { fill: "#BBB", stroke: "#BBB", lineWidth: 15 });
       }
+
       for (const marking of this.markings) {
          marking.draw(ctx);
       }
