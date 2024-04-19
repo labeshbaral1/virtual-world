@@ -1,9 +1,10 @@
 class Car{
-    constructor(x, y, width, height, controlType, angle=0, maxSpeed=3, color="blue", occupancy=0){
+    constructor(x, y, width, height, controlType, angle=0, maxSpeed=3, color="blue", occupancy=1){
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+        this.occupancy = occupancy;
 
         this.speed = 0;
         this.acceleration = 0.2;
@@ -40,9 +41,6 @@ class Car{
             maskCtx.globalCompositeOperation = "destination-atop";
             maskCtx.drawImage(this.img, 0, 0, this.width, this.height);
         };
-
-        // Occupancy property
-        this.occupancy = occupancy;
     }
 
     update(roadBorders,traffic){
@@ -169,7 +167,7 @@ class Car{
         // Draw occupancy indicator
         ctx.fillStyle = "black";
         ctx.font = "bold 16px Arial";
-        ctx.fillText(`Oc${this.occupancy}`, -this.width / 2, -this.height / 2 - 10);
+        ctx.fillText(`   ${this.occupancy}`, -this.width / 2, -this.height / 2 - 10);
 
         ctx.restore();
     }

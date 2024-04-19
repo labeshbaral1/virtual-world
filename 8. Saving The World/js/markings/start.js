@@ -16,6 +16,10 @@ class Start extends Marking {
       ctx.drawImage(this.img, -this.img.width / 2, -this.img.height / 2);
 
       // Draw occupancy indicator
+      //[TODO]: make it dynamic 
+      // in the sense it shows different # for each car
+      // update other files with the logic
+      
       ctx.fillStyle = "black";
       ctx.font = "bold 16px Arial";
       ctx.fillText(`  ${this.occupancy}`, -this.img.width / 2, -this.img.height / 2 - 10);
