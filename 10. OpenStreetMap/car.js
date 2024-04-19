@@ -1,9 +1,12 @@
 class Car{
-    constructor(x,y,width,height,controlType,angle=0,maxSpeed=3,color="blue"){
+    constructor(x,y,width,height,controlType,angle=0,maxSpeed=3,color="blue", occupancy = 1){
         this.x=x;
         this.y=y;
         this.width=width;
         this.height=height;
+        this.occupancy = occupancy;
+
+        // Occupancy 1 as of now, can be made dynamic once MiniMap is implemented
 
         this.speed=0;
         this.acceleration=0.2;
@@ -162,6 +165,14 @@ class Car{
             -this.height/2,
             this.width,
             this.height);
+
+         // Draw occupancy indicator
+         ctx.fillStyle = "black"; 
+         ctx.font = "bold 16px Arial";
+         ctx.fillText(`  ${this.occupancy}`, -this.width / 2, -this.height / 2 - 10);
+ 
+
+
         ctx.restore();
 
     }
