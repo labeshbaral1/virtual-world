@@ -18,16 +18,16 @@ class Tree {
    }
 
    draw(ctx, viewPoint) {
-      // const top = getFake3dPoint(this.center, viewPoint, this.height);
+   //    const top = getFake3dPoint(this.center, viewPoint, this.height);
 
-      // const levelCount = 7;
-      // for (let level = 0; level < levelCount; level++) {
-      //    const t = level / (levelCount - 1);
-      //    const point = lerp2D(this.center, top, t);
-      //    const color = "rgb(30," + lerp(50, 200, t) + ",70)";
-      //    const size = lerp(this.size, 40, t);
-      //    const poly = this.#generateLevel(point, size);
-      //    poly.draw(ctx, { fill: color, stroke: "rgba(0,0,0,0)" });
-      // }
+   //    const levelCount = 7;
+   //    for (let level = 0; level < levelCount; level++) {
+   //       const t = level / (levelCount - 1);
+   //       const point = lerp2D(this.center, top, t);
+   //       const color = "rgb(30," + lerp(50, 200, t) + ",70)";
+   //       const size = lerp(this.size, 40, t);
+   //       const poly = this.#generateLevel(point, size);
+   //       poly.draw(ctx, { fill: color, stroke: "rgba(0,0,0,0)" });
+   //    }
    }
 }
